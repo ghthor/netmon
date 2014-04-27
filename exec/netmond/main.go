@@ -18,6 +18,7 @@ func showUsageAndExit(exitCode int) {
 }
 
 func main() {
+	flag.Usage = usage
 	flag.Parse()
 
 	args := flag.Args()
