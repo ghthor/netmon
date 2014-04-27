@@ -14,6 +14,10 @@ func (c *C) Exec(args []string) error {
 	return nil
 }
 
+func (c *C) Summary() string {
+	return "cmd summary"
+}
+
 func DescribeCommandCatalog(c gospec.Context) {
 	c.Specify("a command catalog", func() {
 		cat := NewCatalog()

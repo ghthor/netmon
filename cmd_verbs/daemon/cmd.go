@@ -12,4 +12,8 @@ func (c cmd) Exec([]string) error {
 	return nil
 }
 
+func (c cmd) Summary() string {
+	return "how to use `daemon` verb"
+}
+
 var Cmd = &cmd{}

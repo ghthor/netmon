@@ -9,4 +9,8 @@ func (c *Cmd) Exec([]string) error {
 	return nil
 }
 
+func (c *Cmd) Summary() string {
+	return "an example implementation of the cmd.Cmd interface"
+}
+
 var C *Cmd = &Cmd{}

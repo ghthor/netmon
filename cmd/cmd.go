@@ -10,6 +10,7 @@ import (
 // An interface to an executable command
 type Cmd interface {
 	Exec(args []string) error
+	Summary() string
 }
 
 // A map of verbs -> Command interfaces
