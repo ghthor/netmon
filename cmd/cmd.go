@@ -43,10 +43,3 @@ func (c Catalog) MatchExists(verb string) (Cmd, bool) {
 	cmd, exists := c[verb]
 	return cmd, exists
 }
-
-// A basic implementation of the Cmd interface
-type C struct{}
-
-func (c *C) Exec(args []string) error {
-	return nil
-}

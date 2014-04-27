@@ -7,6 +7,13 @@ import (
 	"github.com/ghthor/netmon/cmd/test_cmd"
 )
 
+// A basic implementation of the Cmd interface
+type C struct{}
+
+func (c *C) Exec(args []string) error {
+	return nil
+}
+
 func DescribeCommandCatalog(c gospec.Context) {
 	c.Specify("a command catalog", func() {
 		cat := NewCatalog()
