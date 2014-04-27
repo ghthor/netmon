@@ -3,6 +3,8 @@ package cmd
 import (
 	"github.com/ghthor/gospec"
 	. "github.com/ghthor/gospec"
+
+	"github.com/ghthor/netmon/cmd/test_cmd"
 )
 
 func DescribeCommandCatalog(c gospec.Context) {
@@ -22,6 +24,16 @@ func DescribeCommandCatalog(c gospec.Context) {
 			c.Specify("unless the verb is already in use", func() {
 				c.Expect(cat.Register("cmd1", new(C)), Not(IsNil))
 			})
+		})
+
+		c.Specify("registers a command package", func() {
+			cmd := new(C)
+
+			c.Assume(cat.RegisterAsPkg(cmd), IsNil)
+			c.Assume(cat.RegisterAsPkg(test_cmd.C), IsNil)
+
+			c.Expect(cat.MatchVerb("cmd"), Equals, cmd)
+			c.Expect(cat.MatchVerb("test_cmd"), Equals, test_cmd.C)
 		})
 	})
 }

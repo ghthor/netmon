@@ -3,6 +3,8 @@ package cmd
 import (
 	"errors"
 	"fmt"
+	"path"
+	"reflect"
 )
 
 // An interface to an executable command
@@ -20,11 +22,16 @@ func NewCatalog() Catalog {
 // Register a verb to a Command
 func (c Catalog) Register(verb string, cmd Cmd) error {
 	if v, exists := c[verb]; exists {
-		return errors.New(fmt.Sprintf("verb already registered: %s", v))
+		return errors.New(fmt.Sprintf("verb already registered: %s -> %s", verb, v))
 	}
 
 	c[verb] = cmd
 	return nil
+}
+
+func (c Catalog) RegisterAsPkg(cmd Cmd) error {
+	rv := reflect.ValueOf(cmd)
+	return c.Register(path.Base(rv.Elem().Type().PkgPath()), cmd)
 }
 
 // Perform a catalog[verb] key value lookup
