@@ -20,6 +20,7 @@ func showUsageAndExit(exitCode int) {
 }
 
 func main() {
+	flag.Usage = usage
 	flag.Parse()
 
 	// Check that a verb exists in the arguments
