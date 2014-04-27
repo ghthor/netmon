@@ -1,9 +1,9 @@
-package cmds
+package cmd_verbs
 
 import (
 	"github.com/ghthor/netmon/cmd"
-	"github.com/ghthor/netmon/cmds/daemon"
-	"github.com/ghthor/netmon/cmds/status"
+	"github.com/ghthor/netmon/cmd_verbs/daemon"
+	"github.com/ghthor/netmon/cmd_verbs/status"
 )
 
 var c cmd.Catalog = cmd.NewCatalog()

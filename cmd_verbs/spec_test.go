@@ -1,4 +1,4 @@
-package cmds
+package cmd_verbs
 
 import (
 	"github.com/ghthor/gospec"

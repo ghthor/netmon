@@ -1,11 +1,11 @@
-package cmds
+package cmd_verbs
 
 import (
 	"github.com/ghthor/gospec"
 	. "github.com/ghthor/gospec"
 
-	"github.com/ghthor/netmon/cmds/daemon"
-	"github.com/ghthor/netmon/cmds/status"
+	"github.com/ghthor/netmon/cmd_verbs/daemon"
+	"github.com/ghthor/netmon/cmd_verbs/status"
 )
 
 func DescribeRegisteredCommands(c gospec.Context) {

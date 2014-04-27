@@ -4,7 +4,7 @@ import (
 	"flag"
 	"os"
 
-	"github.com/ghthor/netmon/cmds"
+	"github.com/ghthor/netmon/cmd_verbs"
 )
 
 const (
@@ -29,7 +29,7 @@ func main() {
 	}
 
 	// Retrieve the command bound to the verb
-	cmd := cmds.MatchVerb(args[0])
+	cmd := cmd_verbs.MatchVerb(args[0])
 	if cmd == nil {
 		showUsageAndExit(EC_UNKNOWN_COMMAND)
 	}
