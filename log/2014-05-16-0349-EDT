@@ -1,0 +1,41 @@
+Fri May 16 03:49:10 EDT 2014
+
+#~ Logging some thoughts about this project
+
+So, first off, I keep thinking of extremely grandiose ideas for this project.
+Like, storing the database of all nodes in a bitcoin-esqe blockchain that is maintained by the nodes themselves.
+This is crazy, I need to KISS this project up and hopefully writing this entry out will help this a little.
+
+### What does this project need to do?
+- Run a daemon on each node.
+- Ping everything node on a schedule, say everything 10mins or something.
+- Store the result of this ping in a database of some kind.
+
+### What OS's will this daemon have to run on?
+Arch(Can Package), Debian(Must learn how to package .deb), Windows(fuck my life, .msi??)
+
+### Cool things that could happen in this project?
+- Add a node and it's information is propagated to all the nodes in the existing network
+- Bootstrap a node's "node list" from an existing node in the network
+- Distribute the "connectivity history" database across the nodes, ala bitcoin blockchain
+- Store metadata about each nodes OS state
+    - Last system update
+    - Uptime
+- Have some sort of automated deploy based on repository tags, maybe?
+    - I dunno, this seems dangerous, but convenient
+
+### Ok, so none of the above are KISS! Where do I start?
+I think I should start with creating the daemon and then working on the distribution
+- ala
+    - Arch PKGBUILD
+    - Debian .deb | However that works...
+    - Windows | If I even need to worry about windows
+If I do this then once the network is up and running and monitoring itself then I can iterate faster.
+
+I think there may be some notes about this in my personal journal as well.
+Should take a look and bring whatever is still relevant into here.
+
+I also just came to the realization that the cmd* verbs package structure that I experimented with here is exactly what I needed for journal v1.
+Because of this realization this project may be placed on the back burner while I actually go and finish journal v1!
+
+Fri May 16 04:15:25 EDT 2014
